@@ -15,19 +15,16 @@
                 <div class="card" style="width: 18rem;">
                     <!-- <img src="..." class="card-img-top" alt="..."> -->
                     <div class="card-body">
-                        <h5 class="card-title">{{ light }}</h5>
-                        <!-- <p class="card-text">{{ lights['lights'][light] }}</p> -->
-                        <div class="custom-control custom-switch">
-                            {% if lights['lights'][light] == True %}
-                            <h1>Open</h1>
-                            {% else %}
-                            <h1>Close</h1>
-                            {% endif %}
-                            <a href="/lights?{{ light }}=on"><button type="button" class="btn btn-success">Success</button></a>
-                            <a href='/lights?{{ light }}=off'><button type="button" class="btn btn-danger">Danger</button></a>
+                        <div class="alert alert-success" role="alert">
+                            {{ light }}
                         </div>
-                    </div>
-                </div>              
+                        {% if lights['lights'][light] == True %}
+                        <a href="#"><button type="button" class="btn btn-danger">Close</button></a>
+                        {% else %}
+                        <a href="##"><button type="button" class="btn btn-success">Open</button></a>
+                        {% endif %}
+                    </div> 
+                    </div>              
             </div>
             {% endfor %}
         </div>
